@@ -1,4 +1,6 @@
-/* Reset e Configurações Básicas */
+/*
+   RESET
+*/
 * {
   margin: 0;
   padding: 0;
@@ -27,6 +29,9 @@ a {
   color: inherit;
 }
 
+/* 
+   CONTAINER SIMPLES
+*/
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -34,9 +39,7 @@ a {
 }
 
 .row {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 -15px;
+  text-align: left;
 }
 
 .col {
@@ -53,14 +56,19 @@ a {
 }
 
 .col-third {
+  display: inline-block;
   width: 33.333%;
+  vertical-align: top;
+  box-sizing: border-box;
 }
 
 .col-quarter {
   width: 25%;
 }
 
-/* Header e Navegação */
+/*
+   HEADER E NAVEGAÇÃO
+*/
 header {
   background-color: #4d7075;
   padding: 20px 0;
@@ -111,24 +119,9 @@ header {
   background-color: #6ec189;
 }
 
-/* Seções */
-section {
-  padding: 60px 0;
-}
-
-#sobre {
-  background-color: #c1c1c1;
-}
-
-#sobre .row {
-  align-items: center;
-}
-
-#sobre img {
-  border-radius: 75px;
-  margin-bottom: 20px;
-}
-
+/*
+   TÍTULOS E ELEMENTOS DE TEXTO
+*/
 h2 {
   font-size: 32px;
   margin-bottom: 20px;
@@ -147,13 +140,54 @@ h3 {
   color: #6ec189;
 }
 
+/*
+   SEÇÃO SOBRE NÓS
+*/
+section {
+  padding: 60px 0;
+}
+
+#sobre {
+  background-color: #c1c1c1;
+  text-align: center;
+}
+
+
+
 #sobre ul {
   list-style: disc;
   margin-left: 20px;
   margin-bottom: 20px;
 }
 
-/* Seção Hype */
+#sobre .sobre-wrapper {
+  width: 100%;
+  /* Sem display flex ou grid! */
+}
+
+#sobre .sobre-texto {
+  width: 60%;
+  text-align: left;
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+}
+
+#sobre .sobre-img {
+  width: 100%;
+  min-width: 200px;
+  max-width: 380px;
+  margin-left: 32px;
+  border-radius: 70px;
+  margin-bottom: 16px;
+  background: #fff;
+  display: inline-block;
+}
+
+
+/*
+   SEÇÃO HYPE
+*/
 #hype {
   text-align: center;
 }
@@ -163,9 +197,21 @@ h3 {
   margin-bottom: 40px;
 }
 
+#hype p{
+  text-align: center;
+}
+
 #hype .game-card {
   padding: 15px;
   gap: 8px;
+}
+
+#hype .game-card h3{
+  text-align: center;
+}
+
+#hype .hypr-text{
+  text-align: center;
 }
 
 #hype .game-card img {
@@ -184,14 +230,16 @@ h3 {
 #hype .btn-venda {
   background-color: grey;
   color: white;
+  width: 100%;
   margin: 4px;
-  padding: 8px;
-  border-radius: 4px;
+  padding: 12px;
+  border-radius: 12px;
 }
 
-/* Avaliação */
-
-#avaliacoes{
+/*
+   SEÇÃO AVALIAÇÕES
+*/
+#avaliacoes {
   text-align: center;
   padding: 40px 0;
 }
@@ -203,7 +251,6 @@ h3 {
   text-align: center;
 }
 
-
 .avaliacao-lista {
   width: 90%;
   max-width: 1100px;
@@ -212,31 +259,31 @@ h3 {
 
 .avaliacao-card {
   background: #fff;
+  border-radius: 8px;
   box-shadow: 0 1px 8px #0001;
   border-left: 3px solid #2699fb;
-  border-radius: 6px;
-  padding: 18px 18px 18px 0;
-  margin-bottom: 24px;
+  margin: 0 0 24px 0;
+  padding: 20px 20px 20px 20px;
   text-align: left;
+  position: relative;
   overflow: hidden;
 }
 
 .avaliacao-img {
-  display: inline-block;
   width: 80px;
   height: 80px;
   object-fit: cover;
   border-radius: 50%;
-  vertical-align: middle;
-  margin-right: 18px;
-  border: 2px solid #e5f4ff;
   background: #e3e3e3;
+  border: 2px solid #e5f4ff;
+  float: left;
+  margin-right: 18px;
+  margin-bottom: 6px;
+  display: block;
 }
 
 .avaliacao-conteudo {
-  display: inline-block;
-  vertical-align: middle;
-  max-width: calc(100% - 120px); /* Imagem + margens */
+  overflow: hidden;
 }
 
 .avaliacao-conteudo strong {
@@ -251,7 +298,9 @@ h3 {
   color: #555;
 }
 
-/* Formulário de Contato */
+/*
+   SEÇÃO CONTATO E FORMULÁRIO
+*/
 #contato {
   background-color: #e9e8e8;
 }
@@ -306,6 +355,7 @@ h3 {
 }
 
 .btn-success {
+  width: 100%;
   background-color: #6ec189;
   color: white;
 }
@@ -328,82 +378,227 @@ h3 {
   margin-bottom: 15px;
 }
 
-.social-links {
-  display: flex;
-  gap: 20px;
-  font-size: 32px;
-}
-
-.social-links a {
-  transition: transform 0.3s;
-}
-
-.social-links a:hover {
-  transform: scale(1.1);
-}
-
-/* Footer */
+/*
+   FOOTER E WHATSAPP FIXO
+*/
 footer {
   background-color: #4d7075;
   color: white;
   text-align: center;
-  padding: 20px;
+  padding: 24px 0;
+  position: relative;
+  width: 100%;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: flex;
+/* Botão WhatsApp (fixo) */
+.whatsapp {
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  z-index: 1000;
+  background: #25d366;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 3px 8px #0002;
+  transition: box-shadow 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.whatsapp img {
+  width: 44px;
+  height: 44px;
+  display: block;
+}
+
+.whatsapp:hover {
+  box-shadow: 0 5px 18px #16af43bb;
+  background: #22bb55;
+}
+
+/*
+   RESPONSIVIDADE
+*/
+@media (max-width: 576px) {
+  
+
+  header {
+    padding: 18px 0;
+  }
+
+  .logo {
+    font-size: 24px;
+    display: block;
+    margin-bottom: 8px;
+    font-family: "Press Start 2P", cursive;
+    text-align: center;
   }
 
   .nav-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: #4d7075;
-    flex-direction: column;
-    padding: 20px;
-    gap: 10px;
-    transform: translateY(-100%);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s;
+    display: block;
+    position: sticky;
+    text-align: center;
   }
 
-  .nav-menu.active {
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
+  .nav-menu li {
+    display: block;
+    margin: 10px 0;
   }
 
-  .col-half,
-  .col-third,
-  .col-quarter {
-    width: 100%;
+  .nav-menu a {
+    display: block;
+    color: #fff;
+    font-size: 18px;
+    padding: 6px 0;
+    border-radius: 6px;
+    font-family: Arial, sans-serif;
+    background: none;
+    font-weight: bold;
+    transition: background 0.2s;
   }
 
-  .carousel {
-    height: 300px;
-  }
-
-  .carousel-caption {
-    display: none;
-  }
-
-  .tabs-container {
-    flex-direction: column;
-  }
-
-  .tabs-nav {
-    flex: 0 0 auto;
-  }
-
-  .contact-wrapper {
-    flex-direction: column;
+  .nav-menu a:hover {
+    background-color: #6ec189;
   }
 }
 
+/* Formulário Mobile */
+@media (max-width: 576px) {
+  #contato {
+    padding: 18px 0 30px 0;
+    background-color: #ececec;
+  }
+
+  .container {
+    width: 96%;
+    max-width: none;
+    padding: 0 2%;
+    margin: 0 auto;
+  }
+
+  .contact-wrapper {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .contact-form {
+    width: 100%;
+    margin: 0 auto;
+    background: none;
+    padding: 0;
+  }
+
+  .form-group {
+    margin-bottom: 18px;
+    text-align: left;
+  }
+
+  .form-group label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 7px;
+    display: block;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    font-size: 17px;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 5px;
+    display: block;
+    box-sizing: border-box;
+    border: 1px solid #c2c2c2;
+    background: #fff;
+  }
+
+  .form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+
+  .btn-success {
+    width: 100%;
+    margin-top: 12px;
+    font-size: 19px;
+    padding: 13px 0;
+    border-radius: 7px;
+    background-color: #6ec189;
+  }
+}
+@media (max-width: 576px) {
+  #sobre{
+    padding: 0;
+    width: 100%;
+  }
+
+  #sobre .sobre-texto{
+    text-align: center;
+  }
+
+  #sobre .sobre-img {
+  width: 100%;
+  min-width: 200px;
+  max-width: 320px;
+  border-radius: 70px;
+  margin-top: 12px;
+  background: #fff;
+  display: inline-block;
+}
+
+
+
+}
+
+
+/* Botão WhatsApp */
+@media (max-width: 576px) {
+  .whatsapp {
+    right: 18px;
+    bottom: 18px;
+    padding: 7px;
+  }
+
+  .whatsapp img {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* Colunas responsivas mobile */
+@media (max-width: 576px) {
+  .col-third {
+    width: 100%;
+    display: block;
+    margin-bottom: 18px;
+  }
+}
+
+/* Avaliações Mobile */
+@media (max-width: 576px) {
+  .avaliacao-card {
+    text-align: center;
+    padding: 16px 5vw 16px 5vw;
+  }
+
+  .avaliacao-img {
+    float: none;
+    display: block;
+    margin: 0 auto 14px auto;
+  }
+
+  .avaliacao-conteudo {
+    overflow: visible;
+  }
+}
+
+/*
+   COLUNAS DESKTOP LARGAS
+*/
 @media (min-width: 769px) {
   .col-md-3 {
     width: 25%;
